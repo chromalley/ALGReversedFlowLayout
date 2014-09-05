@@ -69,6 +69,13 @@
   return attribute;
 }
 
+- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewLayoutAttributes *attribute = [super layoutAttributesForSupplementaryViewOfKind:kind atIndexPath:indexPath];
+    [self modifyLayoutAttribute:attribute];
+    return attribute;
+}
+
 - (NSArray *) layoutAttributesForElementsInRect:(CGRect)reversedRect
 {
   CGRect const normalRect = [self normalRectForReversedRect:reversedRect];
